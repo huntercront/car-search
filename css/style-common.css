@@ -1,0 +1,148 @@
+body{
+	font-size: 16px;
+	font-display: swap;
+	font-family: 'inter', Helvetica, sans-serif;
+}
+h1, h2, h3, h4{
+	font-family: 'Oswald', Helvetica, sans-serif;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+	margin-left: auto;
+	max-width: 1330px;
+}
+.content-wrapper{
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.c-c{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.c-s{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.brand{
+	color: #D9142B;
+}
+.hero-title{
+	font-size: 3.25rem;
+	text-transform: uppercase;
+}
+.hero-sub{
+	background: #ffffff;
+	padding: 0.5rem 1.5rem 0.5rem 0.5rem ;
+	border-radius: 0.25rem;
+}
+.hero-sub-descr{
+	margin-bottom: 0;
+	margin-left: 1rem;
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+.hero{
+	background: #F5F7F9;
+	padding:3rem 0rem ;
+	margin-top: 3.5rem;
+}
+.hero-text-inner{
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+.brand-bg{
+	background: #FFF2F4;
+	width: 3rem;
+	height: 3rem;
+	flex: 0 0 3rem;
+	border-radius: 0.5rem;
+}
+.hero-descr{
+	font-size: 1.1rem;
+	color: #666666;
+	max-width: 440px;
+	margin-top: 2rem;
+}
+.cta-button{
+	padding: 1rem 2rem;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	color: #ffffff;
+	background: #D9142B;
+	border-radius: 0.26rem;
+}
+.md-icon img{
+	width: 100%;
+	max-width: 2rem;
+}
+.hero-inner{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.hero-img,.hero-text{
+	max-width: 50%;
+	width: 100%;
+	flex: 0 0 50%;
+}
+.hero-img img{
+	width: 100%;
+}
+.header{
+	
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%,0);
+	width: 100%;
+z-index: 300;
+	margin: 0 auto;
+}
+.header .cta-button{
+	border-radius: 0;
+}
+.header .container{
+	background: #060503;
+	max-width: 1400px;
+	padding: 0;
+	padding-left: 1rem;
+}
+.navigation{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header{
+	max-width: 1400px;
+}
+.navigation ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.navigation ul li{
+	padding: 0 0.5rem;
+}
+.navigation ul li a{
+	color: #ffffff;
+	line-height: 3rem;
+	display: block;
+}
+.header-logo img{
+	width: 100%;
+	max-width: 160px;
+}
+
+.header-button{
+margin-left: 1rem;
+padding: 1.5rem 2rem;
+}
+
