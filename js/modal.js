@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function(event) { 
+  document.body.classList.remove('loadind')
+
+
 var contactsUsButton = document.querySelectorAll('.cta-button,.card-button');
 var contactsUs = document.querySelector('.contacts-modal');
 var closeModal = document.querySelector('.close-modal');
@@ -131,3 +135,6 @@ window.onload = function() {
 
 	});
 };
+
+
+});

@@ -1,11 +1,61 @@
 body{
 	font-size: 16px;
 	font-display: swap;
-	font-family: 'inter', Helvetica, sans-serif;
+	font-family:'Roboto',sans-serif;
 }
-h1, h2, h3, h4{
-	font-family: 'Oswald', Helvetica, sans-serif;
+h1{
+	font-family: Arial Narrow,Arial,sans-serif; 
+	letter-spacing: -4px;
 }
+.loadind > *{
+	transition: none!important;
+}
+.contacts-modal{
+	position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 500;
+    background: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 200ms ease-out;
+    transition-property: transform,opacity,visibility;
+}
+@font-face {
+  font-family: 'inter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('inter Regular'), local('inter-Regular');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'inter';
+  font-style: normal;
+  font-weight: 600;
+  src: local('inter Semi-bold'), local('inter-Semi-bold');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oswald Bold'), local('Oswald-Bold');
+  font-display: swap;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;

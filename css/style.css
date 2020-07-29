@@ -1,8 +1,18 @@
 
 
-.wf-inter-n4-inactive, .wf-inter-n6-inactive{
-	font-display: swap;
+.wf-oswald-n7-inactive h1{
+	font-family: 'Oswald', Helvetica, sans-serif;
+	letter-spacing: 0px;
 }
+.wf-oswald-n4-inactive h2, .wf-oswald-n4-inactive h3, .wf-oswald-n4-inactive h4, .wf-oswald-n4-inactive h5{
+	font-family: 'Oswald', Helvetica, sans-serif;
+	letter-spacing: 0px;
+}
+body.wf-inter-n4-inactive{
+	font-family: 'inter', Helvetica, sans-serif;
+}
+
+
 .services-inner{
 	display: flex;
 	flex-wrap: wrap;
