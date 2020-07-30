@@ -7,7 +7,7 @@ h1{
 	font-family: Arial Narrow,Arial,sans-serif; 
 	letter-spacing: -4px;
 }
-.loadind > *{
+body.loadind *{
 	transition: none!important;
 }
 .contacts-modal{
@@ -25,6 +25,36 @@ h1{
     transform: scale(0.9);
     transition: 200ms ease-out;
     transition-property: transform,opacity,visibility;
+}
+@media(max-width:750px){
+	.header .nav-block{
+		background: rgba(6, 5, 3, 0.8);
+		width: 100%;
+		bottom: 0;
+		transform: translate(0,90%);
+		opacity: 0;
+		visibility: hidden;
+		z-index: 0;
+		left: 0;
+		position: absolute;
+		flex-direction: column;
+		padding: 1rem 2rem;
+		transition: 200ms;
+		transition-property: transform,opacity,visibility;
+	}
+	.heder-overlay{
+		position: fixed;
+		z-index: 200;
+		top: 0;
+		left: 0;
+		right:0;
+		bottom: 0;
+		background: rgba(102, 102, 102,0.3);
+		opacity: 0;
+		visibility: hidden;
+		transition: 150ms ease-in;
+		transition-property: opacity,visibility;
+	}
 }
 @font-face {
   font-family: 'inter';
@@ -56,6 +86,7 @@ h1{
   font-display: swap;
 }
 
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -84,6 +115,8 @@ h1{
 .hero-title{
 	font-size: 3.25rem;
 	text-transform: uppercase;
+	line-height: 1.2;
+	margin-bottom: 1rem;
 }
 .hero-sub{
 	background: #ffffff;
@@ -95,6 +128,7 @@ h1{
 	margin-left: 1rem;
 	font-weight: 600;
 	font-size: 1.2rem;
+	line-height: 1.2;
 }
 .hero{
 	background: #F5F7F9;
@@ -120,7 +154,7 @@ h1{
 	max-width: 440px;
 	margin-top: 2rem;
 }
-.cta-button{
+.cta-button,.submit-button{
 	padding: 1rem 2rem;
 	font-size: 1.1rem;
 	border: none;
@@ -128,6 +162,13 @@ h1{
 	color: #ffffff;
 	background: #D9142B;
 	border-radius: 0.26rem;
+	 transition: 200ms ease-in;
+	 transition-property: box-shadow,transform;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.00), 0px 2px 6px rgba(0, 0, 0, 0.00), 0px 0px 1px rgba(0, 0, 0, 0.00);
+}
+.cta-button:hover,.submit-button:hover{
+	transform:translate(0,-3px);
+	box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 .md-icon img{
 	width: 100%;
@@ -142,6 +183,7 @@ h1{
 	max-width: 50%;
 	width: 100%;
 	flex: 0 0 50%;
+	padding: 0 10px;
 }
 .hero-img img{
 	width: 100%;
@@ -185,6 +227,12 @@ z-index: 300;
 	color: #ffffff;
 	line-height: 3rem;
 	display: block;
+	transition: 200ms ease-in;
+	transition-property: opacity;
+}
+.navigation ul li a:hover{
+	text-decoration: none;
+	opacity: 0.7;
 }
 .header-logo img{
 	width: 100%;
@@ -194,5 +242,10 @@ z-index: 300;
 .header-button{
 margin-left: 1rem;
 padding: 1.5rem 2rem;
+transition: 200ms ease-in;
+}
+.header-button:hover{
+	box-shadow: 0px 16px 24px rgba(218, 0, 0, 0.1), 0px 2px 6px rgba(218, 0, 0, 0.2), 0px 0px 1px rgba(218, 0, 0, 0.3);
+	transform: scale(1.05);
 }
 

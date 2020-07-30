@@ -5,7 +5,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
 var contactsUsButton = document.querySelectorAll('.cta-button,.card-button');
 var contactsUs = document.querySelector('.contacts-modal');
 var closeModal = document.querySelector('.close-modal');
+var mobileButton = document.querySelector('.ham')
+var headerOverlay = document.querySelector('.heder-overlay');
+var mobileMenu = document.querySelector('.header .nav-block')
 
+mobileButton.addEventListener('click',function(e){
+	if(this.classList.contains('active')){
+		document.body.style.overflow = 'auto';
+		document.body.style.paddingRight = '0px';
+		this.classList.remove('active');
+		headerOverlay.classList.remove('overlay-active')
+		mobileMenu.classList.remove('active');
+	}else{
+		this.classList.add('active');
+		document.body.style.overflow = 'hidden';
+		document.body.style.paddingRight = getScrollbarWidth()+'px';
+		headerOverlay.classList.add('overlay-active')
+		mobileMenu.classList.add('active');
+	}
+})
+headerOverlay.addEventListener('click',function(e){
+	if(mobileButton.classList.contains('active')){
+		document.body.style.overflow = 'auto';
+		document.body.style.paddingRight = '0px';
+		mobileButton.classList.remove('active');
+		this.classList.remove('overlay-active')
+		mobileMenu.classList.remove('active');
+	}
+})
 
 
 function getScrollbarWidth() {
@@ -41,7 +68,9 @@ function hideModal(){
 if(contactsUsButton){
 	for(var i = 0; i < contactsUsButton.length; i++) {
 		contactsUsButton[i].addEventListener('click', function(e) {
+			if (document.documentElement.clientWidth > 1400) {
 			document.querySelector('.header .container').style.transform = 'translateX(-'+ getScrollbarWidth()/2 +'px)';
+			}
 			for(var i = 0; i < contactsUsButton.length; i++) {
 				contactsUs.classList.add('visible');
 				if(document.body.clientHeight > window.innerHeight){
@@ -76,33 +105,6 @@ for (var i = 0; i < formInputs.length; i++) {
 
 
 
-// function doRegister() {
-//   let checks = {
-//     name : document.getElementById("name"),
-//     phone : document.getElementById("phone"),
-//     message : document.getElementById("message")
-//   },
-// error = "";
-//   if (checks.name.value=="") {
-//     error += document.getElementById("name-alert").value+='<p>A name is required!</p>';
-//   }
-//   if (checks.phone.value=="") {
-//     error += document.getElementById("subject-alert").innerHTML+='<p>A subject is required!</p>';
-//   }
-//   if (checks.message.value=="") {
-//     error += document.getElementById("message-alert").innerHTML+='<p>A message is required!</p>';
-//   }
-//   let pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//   if (!pattern.test(checks.email.value.toLowerCase())) {
-//     error += document.getElementById("email-alert").innerHTML+='<p>A valid email is required!</p>';
-//   }
-// }
-// Ajax
-function validate(e) {
-
-
-	}
-window.onload = function() {
 	document.querySelector(".contacts-form").addEventListener("submit", function(e){
 		event.preventDefault();
     event.stopPropagation();
@@ -134,7 +136,39 @@ window.onload = function() {
 
 
 	});
-};
 
+	(function() {
+		scrollTo();
+	})();
+	
+	function scrollTo() {
+		const links = document.querySelectorAll('[data-anchor]');
+		links.forEach(each => (each.onclick = scrollAnchors));
+	}
+	
+	function scrollAnchors(e, respond = null) {
+		if(mobileButton.classList.contains('active')){
+			document.body.style.overflow = 'auto';
+			document.body.style.paddingRight = '0px';
+			mobileButton.classList.remove('active');
+			headerOverlay.classList.remove('overlay-active')
+			mobileMenu.classList.remove('active');
+		}
+		const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+		e.preventDefault();
+		var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+		const targetAnchor = document.querySelector(targetID);
+		if (!targetAnchor) return;
+		const originalTop = (distanceToTop(targetAnchor)) - document.querySelector('header').offsetHeight;
+		window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+		const checkIfDone = setInterval(function() {
+			const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+			if (distanceToTop(targetAnchor) === 0 || atBottom) {
+				targetAnchor.tabIndex = '-1';
+				window.history.pushState('', '', targetID);
+				clearInterval(checkIfDone);
+			}
+		}, 100);
+	}
 
 });

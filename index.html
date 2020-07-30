@@ -29,27 +29,35 @@
 					<div class="nav-block c-s">
 					<ul class="c-s">
 						<li>
-							<a href="#">Главная</a>
+							<a href="#main" data-anchor="true">Главная</a>
 						</li>
 						<li>
-							<a href="#">Услуги</a>
+							<a href="#services" data-anchor="true">Услуги</a>
 						</li>
 						<li>
-							<a href="#">Гарантии</a>
+							<a href="#garantys" data-anchor="true">Гарантии</a>
 						</li>
 						<li>
-							<a href="#">Контакты</a>
+							<a href="#contacts" data-anchor="true">Контакты</a>
 						</li>
 						
 					</ul>
 					<button class="header-button cta-button">Оставить заявку</button>
 				</div>
+				<div class="mobile-icon">
+
+					<svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="50" >
+						<path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path>
+						<path class="line middle" d="m 30,50 h 40"></path>
+						<path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path>
+						</svg>
+				</div>
 				</nav>
 			</div>
 		</div>
 	</header>
-
-	<main class="content-wrapper">	
+<div class="heder-overlay"></div>
+	<main class="content-wrapper" id="main">	
 	<section class="hero">
 		<div class="container">
 			<div class="content">
@@ -84,7 +92,7 @@
 		</div>
 	</section>
 
-<section class="services">
+<section class="services" id="services">
 	<div class="container">
 		<div class="content">
 			<div class="services-inner">
@@ -172,7 +180,7 @@
 	</div>
 </section>
 
-<section class="garant">
+<section class="garant" id="garantys">
 	<div class="container">
 		<div class="title-block c-c">
 			<div class="section-subtitle c-s">
@@ -201,7 +209,7 @@
 						<img src="./icons/Frame 14.svg" alt="">
 					</div>
 					<p class="garant-card-descr">
-						Экономия 
+						Экономия ваших
 						денег
 					</p>
 				</div>
@@ -261,7 +269,7 @@
 </section>
 </main>
 
-<footer class="footer">
+<footer id="contacts" class="footer">
 	<div class="container">
 
 		<div class="title-block c-c">
@@ -366,7 +374,7 @@
 	<!-- <button type="submit" form="contactsForm" value="Submit" class="submit-button">
 		Оставить заявку
 	</button> -->
-<input type="submit">
+<input type="submit" class="submit-button">
 	</div>
 </form>
 
@@ -385,9 +393,9 @@
 	</div>
 </div>
 </div>
-
-<script src="./js/lazy-load.js"></script>
-<script src="./js/font-load.js"></script>
 <script src="./js/modal.js"></script>
+<script async src="./js/lazy-load.js"></script>
+<script async src="./js/font-load.js"></script>
+
 </body>
 </html>
