@@ -73,11 +73,15 @@ if(contactsUsButton){
 			}
 			for(var i = 0; i < contactsUsButton.length; i++) {
 				contactsUs.classList.add('visible');
+
 				if(document.body.clientHeight > window.innerHeight){
 					
 					document.body.style.overflow = 'hidden';
 					document.body.style.paddingRight = getScrollbarWidth()+'px';
 				}
+				setTimeout(function () {
+				document.getElementById('name').focus();
+			}, 50);
 			}
 			})
 		}
