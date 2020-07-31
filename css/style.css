@@ -421,6 +421,7 @@ margin-right: 0.75rem;
 	width: 100%;
 	max-width: 60%;
 	padding-right: 1rem;
+	position: relative;
 }
 .contacts-modal-header{
 	position: absolute;
@@ -461,6 +462,37 @@ margin-right: 0.75rem;
 .contacts-modal-dealog .content{
 	pointer-events: all
 }
+
+.after-submit{
+	position: absolute;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: 200ms ease-out;
+	width: 100%;
+	background: #ffffff;
+	transform: translate(0,10px);
+	transition-property: transition,visibility,opacity;
+}
+.visible .after-submit.submited{
+	visibility: visible;
+	transform: translate(0,0px);
+	opacity: 1;
+}
+.after-submit-inner{
+	flex-direction: column;
+	max-width: 320px;
+}
+.after-submit-title,.after-submit-descr{
+text-align: center;
+}
+.after-submit .bg-icon{
+margin-bottom: 2rem;
+}
+
 @media(max-width:1160px){
 	.garant-card{
 	flex: 0 0 25%;
@@ -475,6 +507,7 @@ margin-right: 0.75rem;
 		max-width: 50%;
 		flex: 0 0 50%;
 		min-width: auto;
+		padding: 0.5rem;
 	}
 	.hero-title{
 		font-size: 2.5rem;
@@ -497,8 +530,10 @@ margin-right: 0.75rem;
 	.modal-quote{
 		padding-left: 0;
 	}
+	.contacts-card-text a, .contacts-card-text address{
+		font-size: 1.15rem;
+	}
 }
-
 
 @media(max-width:750px){
 
@@ -577,13 +612,15 @@ html{
 	.contacts-modal-dealog{
 		margin-top: 0.5rem;
 	}
-}
-
-@media(max-width:550px){ 
 	.contacts-card{
 		max-width: 100%;
 		flex: 0 0 100%;
+
 	}
+}
+
+@media(max-width:550px){ 
+
 	.garant-card{
 		flex: 0 0 50%;
     max-width: 50%;

@@ -110,8 +110,8 @@ for (var i = 0; i < formInputs.length; i++) {
 
 
 	document.querySelector(".contacts-form").addEventListener("submit", function(e){
-		event.preventDefault();
-    event.stopPropagation();
+		e.preventDefault();
+    e.stopPropagation();
 
 		var params = {
 			name : document.getElementById("name").value,
@@ -120,19 +120,19 @@ for (var i = 0; i < formInputs.length; i++) {
 		};
 			var url = "../php/mail.php?data=" + encodeURIComponent(JSON.stringify(params));;
 
-			console.log(url)
-			var postData= 'form-data' + JSON.stringify(params)
 			xhttp = new XMLHttpRequest();
 			xhttp.open("get", url, true);
 			xhttp.setRequestHeader('Content-Type', 'application/json');
 			xhttp.onload = function() {
 					if (xhttp.readyState == 4 && xhttp.status === 200 && xhttp.responseText) {
-							var json = JSON.parse(xhttp.responseText);
-							console.log(json.name + ", " + json.phone + ", " + json.message);
-
+							document.querySelector('.contacts-form').style.minHeight = document.querySelector('.contacts-form').offsetHeight + 'px';
+							document.querySelector('.after-submit').classList.add('submited');
+							console.log('submited')
+							setTimeout(function () {
+							document.querySelector('.form-inner').remove();
+						}, 150);
 					}
 					else if (xhttp.status !== 200 || !xhttp.responseText) {
-							//display error message
 
 					}
 			};
@@ -140,6 +140,8 @@ for (var i = 0; i < formInputs.length; i++) {
 
 
 	});
+
+
 
 	(function() {
 		scrollTo();
